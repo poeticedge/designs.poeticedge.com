@@ -310,6 +310,12 @@ about
   line-height: 1.5em;
 }
 
+.skills {
+  display: flex;
+  max-width: 1500px;
+  margin: auto 0;
+}
+
 .skill-1 {
   max-width: 500px;
   margin: 0 auto;
@@ -704,7 +710,8 @@ Javascript page
 /*====================
 mobile
 =====================*/
-@media screen (min-width: 800px) {
+
+@media (min-width: 800px) {
   .creative {
     display: flex;
   }
