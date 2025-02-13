@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Megan Campbell Web Portfolio</title>
+    <!--<link rel="preconnect" href="https://fonts.gstatic.com">-->
+    <!-- add a google font <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@900&display=swap" rel="stylesheet">-->
+
+    <link rel="stylesheet" type="text/css" href="web-portfolio.css" />
+
+    <!--<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Roboto:wght@900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="pe-header">
+      <div class="logo">
+        <a href="https://design.poeticedge.com/">Logo</a>
+      </div>
+      <button class="nav-toggle" aria-label="toggle-navigation">
+        <span class="hamburger"></span>
+      </button>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="basketball-section">
+      <div class="basketball-row">
+        <div class="column1">
+          <h2>Basketball Scoreboard</h2>
+          <p>
+            This is the first solo Javascript project I did from Scrimba. The
+            goal was to create buttons that incremented up +1, +2 or +3. I
+            could've written 6 functions but wanted to look for a cleaner way to
+            make this code work. I found that you can pass through a parameter
+            in the html. Stretch goal is to code those parameters in the JS file
+            rather than at the html level as well as create a new game button
+            that clears out the data rather than refreshing page.
+          </p>
+        </div>
+        <div class="column2">
+          <div class="container">
+            <div class="home-section">
+              <h3>HOME</h3>
+              <div class="scorebox">
+                <p id="home-score">0</p>
+              </div>
+              <button id="increment-btn" onclick="homeIncrement()">+1</button>
+              <button id="increment-btn" onclick="homeIncrement(count += 1)">
+                +2
+              </button>
+              <button id="increment-btn" onclick="homeIncrement(count += 2)">
+                +3
+              </button>
+            </div>
+            <div class="guest-section">
+              <h3>GUEST</h3>
+              <div class="scorebox">
+                <p id="guest-score">0</p>
+              </div>
+              <button id="increment-btn" onclick="guestIncrement()">+1</button>
+              <button id="increment-btn" onclick="guestIncrement(count += 1)">
+                +2
+              </button>
+              <button id="increment-btn" onclick="guestIncrement(count += 2)">
+                +3
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="blackjack">
+      <div class="blackjack-row">
+        <div class="column1">
+          <div class="container">
+            <h1>Blackjack</h1>
+            <p id="message-el">Want to play a round?</p>
+            <p id="cards-el">Cards:</p>
+            <p id="sum-el">Sum:</p>
+            <button onclick="startGame()" class="blackjack-btn">
+              START GAME
+            </button>
+            <button onclick="newCard()" class="blackjack-btn">NEW CARD</button>
+            <p id="player-el"></p>
+          </div>
+        </div>
+        <div class="column2">
+          <h2>Blackjack Game</h2>
+          <p>
+            This is my second JS project. I worked with if/else statements,
+            increment and true/false statements. The goal was to create a
+            functioning blackjack game that sends notifications as you are
+            playing the game.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer class="purple-footer">
+      <ul class="social-list">
+        <li class="social-list__item">
+          <a
+            class="social-list__link"
+            href="https://www.linkedin.com/in/megancampbell3/"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </li>
+        <li class="social-list__item">
+          <a
+            class="social-list__link"
+            href="https://www.instagram.com/zaneyadventures/"
+          >
+            <i class="fa-brands fa-instagram-square"></i>
+          </a>
+        </li>
+        <li class="social-list__item">
+          <a class="social-list__link" href="https://github.com/poeticedge/">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Copyright -->
+      <div class="footer-copyright">
+        ©2025 Copyright:
+        <a href="/"> Megan Campbell</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- END Footer -->
+
+    <!--<script src="web-porfolio.js"></script>-->
+    <script>
+      //Basketball Scoreboard
+
+      let count = 0;
+      let homeScore = document.getElementById("home-score");
+      let guestScore = document.getElementById("guest-score");
+
+      function homeIncrement() {
+        count += 1;
+        homeScore.textContent = count;
+      }
+
+      function guestIncrement() {
+        count += 1;
+        guestScore.textContent = count;
+      }
+
+      //Blackjack
+      let player = {
+        name: "Megan",
+        chips: 200,
+      };
+
+      let cards = []; // array
+      let sum = 0;
+      let hasBlackJack = false; //boolean
+      let isAlive = false;
+      let message = "";
+      let messageEl = document.getElementById("message-el");
+      let sumEl = document.querySelector("#sum-el");
+      let cardsEl = document.querySelector("#cards-el");
+      let playerEl = document.getElementById("player-el");
+
+      playerEl.textContent = player.name + ": $" + player.chips; //rendering the object declared above
+
+      function getRandomCard() {
+        //function declaration
+        let randomNumber = Math.floor(Math.random() * 13) + 1;
+        if (randomNumber > 10) {
+          return 10;
+        } else if (randomNumber === 1) {
+          return 11;
+        } else {
+          return randomNumber;
+        }
+      }
+
+      function startGame() {
+        isAlive = true;
+        let firstCard = getRandomCard();
+        let secondCard = getRandomCard();
+        cards = [firstCard, secondCard];
+        sum = firstCard + secondCard;
+        renderGame();
+      }
+
+      function renderGame() {
+        cardsEl.textContent = "Cards: ";
+        for (let i = 0; i < cards.length; i++) {
+          cardsEl.textContent += cards[i] + " ";
+        }
+
+        sumEl.textContent = "Sum: " + sum;
+        if (sum <= 20) {
+          message = "Do you want to draw a new card?";
+        } else if (sum === 21) {
+          message = "You've got Blackjack!";
+          hasBlackJack = true;
+        } else {
+          message = "You're out of the game!";
+          isAlive = false;
+        }
+        messageEl.textContent = message;
+      }
+
+      function newCard() {
+        if (isAlive === true && hasBlackJack === false) {
+          let card = getRandomCard();
+          sum += card;
+          cards.push(card);
+          renderGame();
+        }
+      }
+    </script>
+    <script
+      src="https://kit.fontawesome.com/78eceac17e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
