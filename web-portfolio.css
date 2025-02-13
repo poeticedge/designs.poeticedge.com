@@ -677,7 +677,7 @@ Javascript page
   margin: 10px auto;
 }
 
-.blackjack-section .container {
+.blackjack .container {
   justify-content: space-around;
   background-color: #016f32;
   width: 650px;
@@ -705,6 +705,75 @@ Javascript page
   border: none;
   color: #016f32;
   margin: 4px 0;
+}
+
+/*====================
+Password Generator
+=====================*/
+.banner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1c1c1c;
+  max-width: 500px;
+  height: 500px;
+  margin: auto;
+}
+
+.banner-container .banner {
+  background: #273549;
+  margin: 10px;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+  width: 80%;
+}
+
+.banner-container .banner .content {
+  color: #fff;
+  padding: 40px;
+  border-bottom: 2px solid #c4b5fd;
+}
+
+.banner-container .banner span {
+  color: #c4b5fd;
+}
+
+button {
+  background-color: #c4b5fd;
+  color: #fff;
+  text-shadow: black 0px 0px 2px;
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin: 10px 0;
+  border-style: none;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  background-color: #7d44aa;
+}
+
+.pswd-containers {
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+  margin: 2em 1em;
+  flex-wrap: nowrap;
+  height: 35px;
+  align-items: center;
+}
+
+.generatedPassword {
+  width: 100%;
+  color: #1c1c1c;
+  background: #c4b5fd;
+  border-radius: 4px;
+  padding: 10px 16px;
+  height: 15px;
 }
 
 /*====================
