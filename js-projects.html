@@ -39,20 +39,22 @@
     </header>
 
     <section class="basketball-section">
-      <div class="basketball-row">
-        <div class="column1">
-          <h2>Basketball Scoreboard</h2>
-          <p>
-            This is the first solo Javascript project I did from Scrimba. The
-            goal was to create buttons that incremented up +1, +2 or +3. I
-            could've written 6 functions but wanted to look for a cleaner way to
-            make this code work. I found that you can pass through a parameter
-            in the html. Stretch goal is to code those parameters in the JS file
-            rather than at the html level as well as create a new game button
-            that clears out the data rather than refreshing page.
-          </p>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="padding">
+            <h2>Basketball Scoreboard</h2>
+            <p>
+              This is the first solo Javascript project I did from Scrimba. The
+              goal was to create buttons that incremented up +1, +2 or +3. I
+              could've written 6 functions but wanted to look for a cleaner way
+              to make this code work. I found that you can pass through a
+              parameter in the html. Stretch goal is to code those parameters in
+              the JS file rather than at the html level as well as create a new
+              game button that clears out the data rather than refreshing page.
+            </p>
+          </div>
         </div>
-        <div class="column2">
+        <div class="col-md-6">
           <div class="container">
             <div class="home-section">
               <h3>HOME</h3>
@@ -187,6 +189,14 @@
 
     <!--<script src="web-porfolio.js"></script>-->
     <script>
+      //Navigation
+
+      const navToggle = document.querySelector(".nav-toggle");
+      const navMenu = document.querySelectorAll(".nav");
+
+      navToggle.addEventListener("click", () => {
+        document.body.classList.toggle("nav-open");
+      });
       //Basketball Scoreboard
 
       let count = 0;
