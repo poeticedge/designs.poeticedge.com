@@ -1,0 +1,1 @@
+This is my portfolio site using the languages that I've learned. I am mostly self taught and and actively adding new languages to my toolkit. The projects in this site are mostly HTML, CSS and Javascript. In the near future I plan on adding my React projects.
